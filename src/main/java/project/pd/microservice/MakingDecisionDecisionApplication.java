@@ -2,13 +2,10 @@ package project.pd.microservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
-import org.springframework.context.annotation.Bean;
-
-import project.pd.microservice.model.Decision;
+//import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
-@EnableEurekaServer
+//@EnableEurekaServer
 public class MakingDecisionDecisionApplication {
 
 	public static void main(String[] args) {
