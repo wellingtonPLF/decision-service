@@ -16,33 +16,33 @@ import project.pd.microservice.model.Decision;
 import project.pd.microservice.service.DecisionService;
 
 @RestController
-@RequestMapping("/decisions")
+@RequestMapping("/")
 public class DecisionController {
 	
 	@Autowired
 	private DecisionService decisionService;
 	
-	@GetMapping("/")
+	@GetMapping("/decisions")
    	public List<Decision> getDecisions() {
        	return this.decisionService.getDecisions();
    	}
 	
-   	@GetMapping("/{idDecision}")
+   	@GetMapping("/decisions/{idDecision}")
    	public Decision getDecisionById(@PathVariable("idDecision") Long idDecision) {
        	return this.decisionService.getDecisionById(idDecision);
    	}
    
-   	@PostMapping("/")
+   	@PostMapping("/decisions")
    	public Decision addDecision(@RequestBody Decision decision){
        	return this.decisionService.checkUserDecision(decision);
    	}
    
-   	@PutMapping("/{idDecision}")
+   	@PutMapping("/decisions/{idDecision}")
    	public Decision updateDecision(@RequestBody Decision decision){
 	   	return this.decisionService.insertOrUpdate(decision);
    	}	
 
-   	@DeleteMapping("/{idDecision}")
+   	@DeleteMapping("/decisions/{idDecision}")
    	public void deleteDecision(@PathVariable("idDecision") Long idDecision) {
 	   	this.decisionService.delete(idDecision);
    	}	
